@@ -1,7 +1,7 @@
 # azureCloudResume
-My Own Azure Cloud Resume Challenge
+My Own Azure Cloud Resume Challenge, following ACG project video
 
 ## First Steps
 
 - Frontend folder contains the website
-- Backend folder contains the counter and azure function code
+- main.js contains visitor counter code
