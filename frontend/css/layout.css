@@ -105,8 +105,8 @@ header .scrolldown a {
    margin-left: -29px;
    color: #fff;
    display: block;
-   height: 84px;
-   width: 84px;
+   height: 42px;
+   width: 42px;
    font-size: 42px;
    line-height: 42px;
    color: #fff;
@@ -207,8 +207,8 @@ ul#nav li.current a { color: #F06000; }
 }
 #about .profile-pic {
    position: relative;
-   width: 120px;
-   height: 120px;
+   width: 130px;
+   height: 150px;
    border-radius: 100%;
 }
 #about .contact-details { width: 41.66667%; }
