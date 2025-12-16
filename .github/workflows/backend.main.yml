@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
     - 'backend/**'
+  workflow_dispatch:
 
 env:
   AZURE_FUNCTIONAPP_NAME: getAzureResumeCounterEW  # set this to your application's name
@@ -45,4 +46,5 @@ jobs:
       with:
         app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
         package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/api/api/output'
+
 
