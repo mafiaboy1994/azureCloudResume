@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "52wLoS5cBcM=",
+  "dgSpecHash": "qgyUOZyT1MA=",
   "success": true,
   "projectFilePath": "F:\\I.T\\Scripting\\azureCloudResume\\azureCloudResume.csproj",
   "expectedPackageFiles": [
@@ -140,10 +140,7 @@
     "C:\\Users\\Elijah\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\Elijah\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Elijah\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\Elijah\\.nuget\\packages\\windowsazure.storage\\9.3.1\\windowsazure.storage.9.3.1.nupkg.sha512",
-    "C:\\Users\\Elijah\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.36\\microsoft.netcore.app.ref.6.0.36.nupkg.sha512",
-    "C:\\Users\\Elijah\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.36\\microsoft.windowsdesktop.app.ref.6.0.36.nupkg.sha512",
-    "C:\\Users\\Elijah\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.36\\microsoft.aspnetcore.app.ref.6.0.36.nupkg.sha512"
+    "C:\\Users\\Elijah\\.nuget\\packages\\windowsazure.storage\\9.3.1\\windowsazure.storage.9.3.1.nupkg.sha512"
   ],
   "logs": []
 }
