@@ -2,7 +2,6 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <AzureFunctionsVersion>v4</AzureFunctionsVersion>
-    <RootNamespace>My.Namespace</RootNamespace>
     <OutputType>Exe</OutputType>
   </PropertyGroup>
   <ItemGroup>
