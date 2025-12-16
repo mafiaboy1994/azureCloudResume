@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\I.T\\Scripting\\azureCloudResume\\backend\\tests\\tests.csproj": {}
+    "F:\\I.T\\Scripting\\azureCloudResume\\backend\\tests\\tests.csproj": {}
   },
   "projects": {
-    "D:\\I.T\\Scripting\\azureCloudResume\\backend\\api\\api\\api.csproj": {
+    "F:\\I.T\\Scripting\\azureCloudResume\\backend\\api\\api\\api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\I.T\\Scripting\\azureCloudResume\\backend\\api\\api\\api.csproj",
+        "projectUniqueName": "F:\\I.T\\Scripting\\azureCloudResume\\backend\\api\\api\\api.csproj",
         "projectName": "api",
-        "projectPath": "D:\\I.T\\Scripting\\azureCloudResume\\backend\\api\\api\\api.csproj",
+        "projectPath": "F:\\I.T\\Scripting\\azureCloudResume\\backend\\api\\api\\api.csproj",
         "packagesPath": "C:\\Users\\Elijah\\.nuget\\packages\\",
-        "outputPath": "D:\\I.T\\Scripting\\azureCloudResume\\backend\\api\\api\\obj\\",
+        "outputPath": "F:\\I.T\\Scripting\\azureCloudResume\\backend\\api\\api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -22,15 +22,15 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -38,19 +38,45 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
-            "Microsoft.Azure.WebJobs.Extensions.CosmosDB": {
+            "Microsoft.ApplicationInsights.WorkerService": {
               "target": "Package",
-              "version": "[3.0.10, )"
+              "version": "[2.*, )"
             },
-            "Microsoft.NET.Sdk.Functions": {
+            "Microsoft.Azure.Functions.Worker": {
               "target": "Package",
-              "version": "[4.1.1, )"
+              "version": "[2.*, )"
+            },
+            "Microsoft.Azure.Functions.Worker.ApplicationInsights": {
+              "target": "Package",
+              "version": "[2.*, )"
+            },
+            "Microsoft.Azure.Functions.Worker.Extensions.CosmosDB": {
+              "target": "Package",
+              "version": "[4.*, )"
+            },
+            "Microsoft.Azure.Functions.Worker.Extensions.Http": {
+              "target": "Package",
+              "version": "[3.*, )"
+            },
+            "Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore": {
+              "target": "Package",
+              "version": "[*, )"
+            },
+            "Microsoft.Azure.Functions.Worker.Sdk": {
+              "target": "Package",
+              "version": "[1.*, )"
             }
           },
           "imports": [
@@ -59,7 +85,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -68,18 +95,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\I.T\\Scripting\\azureCloudResume\\backend\\tests\\tests.csproj": {
+    "F:\\I.T\\Scripting\\azureCloudResume\\backend\\tests\\tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\I.T\\Scripting\\azureCloudResume\\backend\\tests\\tests.csproj",
+        "projectUniqueName": "F:\\I.T\\Scripting\\azureCloudResume\\backend\\tests\\tests.csproj",
         "projectName": "tests",
-        "projectPath": "D:\\I.T\\Scripting\\azureCloudResume\\backend\\tests\\tests.csproj",
+        "projectPath": "F:\\I.T\\Scripting\\azureCloudResume\\backend\\tests\\tests.csproj",
         "packagesPath": "C:\\Users\\Elijah\\.nuget\\packages\\",
-        "outputPath": "D:\\I.T\\Scripting\\azureCloudResume\\backend\\tests\\obj\\",
+        "outputPath": "F:\\I.T\\Scripting\\azureCloudResume\\backend\\tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -100,8 +127,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\I.T\\Scripting\\azureCloudResume\\backend\\api\\api\\api.csproj": {
-                "projectPath": "D:\\I.T\\Scripting\\azureCloudResume\\backend\\api\\api\\api.csproj"
+              "F:\\I.T\\Scripting\\azureCloudResume\\backend\\api\\api\\api.csproj": {
+                "projectPath": "F:\\I.T\\Scripting\\azureCloudResume\\backend\\api\\api\\api.csproj"
               }
             }
           }
@@ -110,7 +137,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net6.0": {
@@ -147,16 +180,31 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.36, 6.0.36]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.36, 6.0.36]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.36, 6.0.36]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305\\RuntimeIdentifierGraph.json"
         }
       }
     }

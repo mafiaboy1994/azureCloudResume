@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "A5XxBbEdWx7qQr3egQsxoECh5bWnUi6BT/ZDPh8/HfMcmiZXsoUJ4kXQ8DqRhWfWaM6iaB8TBipmtszFISUN0g==",
+  "dgSpecHash": "52wLoS5cBcM=",
   "success": true,
-  "projectFilePath": "d:\\I.T\\Scripting\\azureCloudResume\\azureCloudResume.csproj",
+  "projectFilePath": "F:\\I.T\\Scripting\\azureCloudResume\\azureCloudResume.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Elijah\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.4\\microsoft.aspnet.webapi.client.5.2.4.nupkg.sha512",
     "C:\\Users\\Elijah\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.1.0\\microsoft.aspnetcore.authentication.abstractions.2.1.0.nupkg.sha512",
@@ -140,7 +140,10 @@
     "C:\\Users\\Elijah\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\Elijah\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Elijah\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\Elijah\\.nuget\\packages\\windowsazure.storage\\9.3.1\\windowsazure.storage.9.3.1.nupkg.sha512"
+    "C:\\Users\\Elijah\\.nuget\\packages\\windowsazure.storage\\9.3.1\\windowsazure.storage.9.3.1.nupkg.sha512",
+    "C:\\Users\\Elijah\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.36\\microsoft.netcore.app.ref.6.0.36.nupkg.sha512",
+    "C:\\Users\\Elijah\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.36\\microsoft.windowsdesktop.app.ref.6.0.36.nupkg.sha512",
+    "C:\\Users\\Elijah\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.36\\microsoft.aspnetcore.app.ref.6.0.36.nupkg.sha512"
   ],
   "logs": []
 }
