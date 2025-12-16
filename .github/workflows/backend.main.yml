@@ -5,11 +5,12 @@ on:
     branches: [main]
     paths:
     - 'backend/**'
+  workflow_dispatch:
 
 env:
   AZURE_FUNCTIONAPP_NAME: getAzureResumeCounterEW  # set this to your application's name
   AZURE_FUNCTIONAPP_PACKAGE_PATH: 'backend'    # set this to the path to your web app project, defaults to the repository root
-  DOTNET_VERSION: '6.0'              # set this to the dotnet version to use
+  DOTNET_VERSION: '8.0'              # set this to the dotnet version to use
 
 jobs:
   build-and-deploy:
@@ -45,3 +46,5 @@ jobs:
       with:
         app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
         package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/api/api/output'
+
+
