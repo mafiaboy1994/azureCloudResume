@@ -48,3 +48,4 @@ jobs:
         package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/api/api/output'
 
 
+
