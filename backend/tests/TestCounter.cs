@@ -1,31 +1,36 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Xunit;
-using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
-using System.Net;
-using System.Net.Http;
-using System.Text;
+using Microsoft.AspNetCore.Mvc;
+using Xunit;
 
-namespace tests
+public class TestCounter
 {
-    public class TestCounter
+    [Fact]
+    public void Run_IncrementsCounter_AndReturnsOk()
     {
-        private readonly ILogger logger = TestFactory.CreateLogger();
+        // Arrange
+        var logger =
+            Microsoft.Extensions.Logging.Abstractions.NullLogger<Company.Function.GetResumeCounter>.Instance;
 
-        [Fact]
-        public async void Http_trigger_should_return_known_string()
+        var fn = new Company.Function.GetResumeCounter(logger);
+
+        var req = new DefaultHttpContext().Request;
+
+        var counter = new Company.Function.Counter
         {
-            var counter = new Company.Function.Counter();
-            counter.Id = "1";
-            counter.Count = 2;
-            var request = TestFactory.CreateHttpRequest();
-            var response = (HttpResponseMessage) Company.Function.GetResumeCounter.Run(request, counter, out counter, logger);
-            Assert.Equal(3, counter.Count);
-        }
+            Id = "1",
+            PartitionKey = "1",
+            Count = 0
+        };
 
+        // Act
+        var result = fn.Run(req, counter);
+
+        // Assert Cosmos output
+        Assert.Equal(1, result.UpdatedCounter.Count);
+
+        // Assert HTTP response
+        var ok = Assert.IsType<OkObjectResult>(result.HttpResponse);
+        var body = Assert.IsType<Company.Function.Counter>(ok.Value);
+        Assert.Equal(1, body.Count);
     }
 }
