@@ -17,29 +17,34 @@ public class GetResumeCounter
 
     [Function("GetResumeCounter")]
     public ResumeCounterResponse Run(
-        [HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequest req,
-        //[HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequest req, 
+    [HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequest req,
 
-        [CosmosDBInput(
-            databaseName: "AzureResume",
-            containerName: "Counter",
-            Connection = "AzureResumeConnectionString",
-            Id = "1",
-            PartitionKey = "1")]
-        Counter counter
+    [CosmosDBInput(
+        databaseName: "AzureResume",
+        containerName: "Counter",
+        Connection = "AzureResumeConnectionString",
+        Id = "1",
+        PartitionKey = "1")]
+    Counter counter
     )
     {
         _logger.LogInformation("GetResumeCounter processed a request.");
 
-        counter ??= new Counter { Id = "1", PartitionKey = "1", Count = 0 };
-        counter.Count += 1;
+    counter ??= new Counter { Id = "1", PartitionKey = "1", Count = 0 };
+    counter.Count += 1;
 
-        return new ResumeCounterResponse
-        {
-            UpdatedCounter = counter,
-            HttpResponse = new OkObjectResult(counter)
-        };
-    }
+    // 🔒 Tell CDNs/browsers: do NOT cache this response
+    req.HttpContext.Response.Headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0";
+    req.HttpContext.Response.Headers["Pragma"] = "no-cache";
+    req.HttpContext.Response.Headers["Expires"] = "0";
+    // Optional extra for some proxies/CDNs:
+    req.HttpContext.Response.Headers["Surrogate-Control"] = "no-store";
+
+    return new ResumeCounterResponse
+    {
+        UpdatedCounter = counter,
+        HttpResponse = new OkObjectResult(counter)
+    };
 }
 
 public class ResumeCounterResponse
