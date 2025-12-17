@@ -17,7 +17,8 @@ public class GetResumeCounter
 
     [Function("GetResumeCounter")]
     public ResumeCounterResponse Run(
-    [HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequest req,
+    [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post",
+        Route = "GetResumeCounter/{token}")] HttpRequest req,
 
     [CosmosDBInput(
         databaseName: "AzureResume",
@@ -25,10 +26,24 @@ public class GetResumeCounter
         Connection = "AzureResumeConnectionString",
         Id = "1",
         PartitionKey = "1")]
-    Counter counter
+    Counter counter,
+    string token
     )
     {
         _logger.LogInformation("GetResumeCounter processed a request.");
+
+    var expected = Environment.GetEnvironmentVariable("RESUME_COUNTER_SECRET");
+
+    if (string.IsNullOrEmpty(expected) || token != expected)
+    {
+        return new ResumeCounterResponse
+        {
+            UpdatedCounter = counter,
+            HttpResponse = new UnauthorizedResult()
+        };
+    }
+
+
 
     counter ??= new Counter { Id = "1", PartitionKey = "1", Count = 0 };
     counter.Count += 1;
