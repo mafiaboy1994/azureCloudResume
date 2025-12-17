@@ -17,8 +17,8 @@ public class GetResumeCounter
 
     [Function("GetResumeCounter")]
     public ResumeCounterResponse Run(
-        //[HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequest req,
-        [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequest req, 
+        [HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequest req,
+        //[HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequest req, 
 
         [CosmosDBInput(
             databaseName: "AzureResume",
