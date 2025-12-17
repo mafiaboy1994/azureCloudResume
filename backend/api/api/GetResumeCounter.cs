@@ -41,11 +41,11 @@ public class GetResumeCounter
     req.HttpContext.Response.Headers["Surrogate-Control"] = "no-store";
 
     return new ResumeCounterResponse
-    {
-        UpdatedCounter = counter,
-        HttpResponse = new OkObjectResult(counter)
-    };
-}
+        {
+            UpdatedCounter = counter,
+            HttpResponse = new OkObjectResult(counter)
+        };
+    }
 
 public class ResumeCounterResponse
 {
@@ -57,6 +57,7 @@ public class ResumeCounterResponse
 
     [HttpResult]
     public IActionResult HttpResponse { get; set; } = default!;
+}
 }
 
 // Make sure these match your document fields / partition key path in Cosmos.
