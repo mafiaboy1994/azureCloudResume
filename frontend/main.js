@@ -4,7 +4,9 @@ window.addEventListener('DOMContentLoaded', (event) =>{
 
 //const functionApiUrl = 'https://getazureresumecounterew-isolated.azurewebsites.net/api/GetResumeCounter';
 
-const functionApiUrl = 'https://resumeapiazurechallenege.azureedge.net/api/GetResumeCounter';
+//const functionApiUrl = 'https://resumeapiazurechallenege.azureedge.net/api/GetResumeCounter';
+
+const functionApiUrl = 'https://resumeapiazurechallenege.azureedge.net';
 
 const LocalFunctionApi = 'http://localhost:7071/api/GetResumeCounter';
 
