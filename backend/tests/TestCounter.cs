@@ -1,36 +1,53 @@
+using System;
+using Company.Function;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging.Abstractions;
 using Xunit;
 
 public class TestCounter
 {
     [Fact]
-    public void Run_IncrementsCounter_AndReturnsOk()
+    public void Run_WithValidToken_IncrementsAndReturnsOk()
     {
         // Arrange
-        var logger =
-            Microsoft.Extensions.Logging.Abstractions.NullLogger<Company.Function.GetResumeCounter>.Instance;
+        Environment.SetEnvironmentVariable("RESUME_COUNTER_SECRET", "test-token");
 
-        var fn = new Company.Function.GetResumeCounter(logger);
+        var logger = NullLogger<GetResumeCounter>.Instance;
+        var fn = new GetResumeCounter(logger);
 
         var req = new DefaultHttpContext().Request;
 
-        var counter = new Company.Function.Counter
-        {
-            Id = "1",
-            PartitionKey = "1",
-            Count = 0
-        };
+        var counter = new Counter { Id = "1", PartitionKey = "1", Count = 0 };
 
         // Act
-        var result = fn.Run(req, counter);
+        var result = fn.Run(req, counter, "test-token");
 
-        // Assert Cosmos output
+        // Assert
         Assert.Equal(1, result.UpdatedCounter.Count);
 
-        // Assert HTTP response
         var ok = Assert.IsType<OkObjectResult>(result.HttpResponse);
-        var body = Assert.IsType<Company.Function.Counter>(ok.Value);
+        var body = Assert.IsType<Counter>(ok.Value);
         Assert.Equal(1, body.Count);
+    }
+
+    [Fact]
+    public void Run_WithInvalidToken_ReturnsUnauthorized()
+    {
+        // Arrange
+        Environment.SetEnvironmentVariable("RESUME_COUNTER_SECRET", "test-token");
+
+        var logger = NullLogger<GetResumeCounter>.Instance;
+        var fn = new GetResumeCounter(logger);
+
+        var req = new DefaultHttpContext().Request;
+
+        var counter = new Counter { Id = "1", PartitionKey = "1", Count = 0 };
+
+        // Act
+        var result = fn.Run(req, counter, "wrong-token");
+
+        // Assert
+        Assert.IsType<UnauthorizedResult>(result.HttpResponse);
     }
 }
