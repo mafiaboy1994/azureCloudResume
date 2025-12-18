@@ -14,7 +14,13 @@ public class TestCounter
     // so this can be a dummy endpoint.
     private static CosmosClient CreateDummyCosmosClient()
     {
-        return new CosmosClient("https://example.invalid");
+        // Valid *format* (won’t parse-error). It will never be used in the invalid-token test.
+        const string endpoint = "https://localhost:8081";
+        const string key =
+            "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4X7C1D+"
+        + "0Jk1rYVYtG7rj7G4mQ==";
+
+        return new CosmosClient(endpoint, key);
     }
 
     [Fact(Skip = "GetResumeCounter now requires CosmosClient + hits Cosmos on valid-token path. Re-enable after refactoring throttling to be mockable or after adding Cosmos integration test setup.")]
