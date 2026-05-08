@@ -205,12 +205,32 @@ ul#nav li.current a { color: #F06000; }
    line-height: 30px;
    color: #7A7A7A;
 }
-#about .profile-pic {
-   position: relative;
-   width: 130px;
-   height: 150px;
-   border-radius: 100%;
+
+
+#about .profile-pic-wrap {
+   width: 145px;
+   height: 145px;
+   border-radius: 50%;
+   overflow: hidden;
+   background: #2b2b2b;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
+
+
+#about .profile-pic {
+   width: 120px;
+   height: 120px;
+   border-radius: 50%;
+   object-fit: cover;
+   object-position: 50% 25%;
+}
+
+
+
+
+
 #about .contact-details { width: 41.66667%; }
 #about .download {
    width: 58.33333%;
@@ -280,6 +300,425 @@ ul#nav li.current a { color: #F06000; }
    font: 15px/24px 'opensans-regular', sans-serif;
    margin-top: 6px;
 }
+
+/* ------------------------------------------------------------------ */
+/* Certification Cards
+/* ------------------------------------------------------------------ */
+
+.cert-card {
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(135deg, #fcfcfd 0%, #f5f8fb 55%, #eef6ff 100%);
+  border: 1px solid #d9dee7;
+  border-left: 5px solid #2563eb;
+  border-radius: 14px;
+
+  padding: 22px 26px;
+  margin: 0 0 28px 0;
+
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+/* Soft decorative glow */
+.cert-card::before {
+  content: "";
+  position: absolute;
+  top: -45px;
+  right: -45px;
+  width: 190px;
+  height: 190px;
+  background: radial-gradient(
+    circle,
+    rgba(20, 166, 163, 0.12) 0%,
+    rgba(20, 166, 163, 0.04) 40%,
+    rgba(20, 166, 163, 0) 72%
+  );
+  pointer-events: none;
+}
+
+/* Very subtle lower blue glow */
+.cert-card::after {
+  content: "";
+  position: absolute;
+  bottom: -55px;
+  left: 38%;
+  width: 170px;
+  height: 170px;
+  background: radial-gradient(
+    circle,
+    rgba(37, 99, 235, 0.08) 0%,
+    rgba(37, 99, 235, 0.03) 45%,
+    rgba(37, 99, 235, 0) 72%
+  );
+  pointer-events: none;
+}
+
+.cert-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.11);
+  border-color: #cfd8e6;
+}
+
+/* Ensures content appears above decorative background layers */
+.cert-card-header,
+.cert-details {
+  position: relative;
+  z-index: 1;
+}
+
+.cert-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.cert-icon {
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 100%);
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+
+  font-size: 23px;
+  line-height: 1;
+
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+.cert-title {
+  margin: 0;
+  font-size: 1.35rem;
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.cert-title a {
+  color: #14a6a3;
+  text-decoration: none;
+}
+
+.cert-title a:hover {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.cert-provider {
+  margin: 8px 0 0;
+  color: #6b7280;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.cert-details {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+
+  /*
+    This aligns the detail boxes underneath the text area rather than
+    directly under the icon.
+  */
+  margin-left: 60px;
+  margin-top: 8px;
+}
+
+.cert-detail {
+  min-width: 95px;
+  padding: 8px 10px;
+
+  background: linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
+  border: 1px solid #d8dee8;
+  border-radius: 8px;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 2px 6px rgba(15, 23, 42, 0.03);
+}
+
+.cert-label {
+  display: block;
+
+  color: #6b7280;
+  font-size: 0.62rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  margin-bottom: 7px;
+}
+
+.cert-value {
+  display: block;
+
+  color: #111827;
+  font-size: 0.8rem;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+
+/* ------------------------------------------------------------------ */
+/* Certification Cards - Mobile
+/* ------------------------------------------------------------------ */
+
+@media only screen and (max-width: 767px) {
+  .cert-card {
+    padding: 18px;
+    margin-bottom: 22px;
+    border-radius: 12px;
+  }
+
+  .cert-card-header {
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .cert-icon {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    font-size: 21px;
+    border-radius: 10px;
+  }
+
+  .cert-title {
+    font-size: 1.05rem;
+    line-height: 1.3;
+  }
+
+  .cert-provider {
+    font-size: 0.78rem;
+    margin-top: 6px;
+  }
+
+  .cert-details {
+    margin-left: 0;
+    margin-top: 12px;
+    gap: 8px;
+  }
+
+  .cert-detail {
+    min-width: 90px;
+    padding: 8px 10px;
+  }
+
+  .cert-label {
+    font-size: 0.6rem;
+    margin-bottom: 6px;
+  }
+
+  .cert-value {
+    font-size: 0.78rem;
+  }
+}
+
+
+
+
+/* ------------------------------------------------------------------ */
+/* Work Experience Cards
+/* ------------------------------------------------------------------ */
+
+.work-card {
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(135deg, #fcfcfd 0%, #f5f8fb 55%, #eef6ff 100%);
+  border: 1px solid #d9dee7;
+  border-left: 5px solid #14a6a3;
+  border-radius: 14px;
+
+  padding: 22px 26px;
+  margin: 0 0 28px 0;
+
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.work-card::before {
+  content: "";
+  position: absolute;
+  top: -45px;
+  right: -45px;
+  width: 190px;
+  height: 190px;
+  background: radial-gradient(
+    circle,
+    rgba(20, 166, 163, 0.12) 0%,
+    rgba(20, 166, 163, 0.04) 40%,
+    rgba(20, 166, 163, 0) 72%
+  );
+  pointer-events: none;
+}
+
+.work-card::after {
+  content: "";
+  position: absolute;
+  bottom: -55px;
+  left: 38%;
+  width: 170px;
+  height: 170px;
+  background: radial-gradient(
+    circle,
+    rgba(37, 99, 235, 0.08) 0%,
+    rgba(37, 99, 235, 0.03) 45%,
+    rgba(37, 99, 235, 0) 72%
+  );
+  pointer-events: none;
+}
+
+.work-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.11);
+  border-color: #cfd8e6;
+}
+
+.work-card-header,
+.work-highlights {
+  position: relative;
+  z-index: 1;
+}
+
+.work-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.work-icon {
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 100%);
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+
+  font-size: 23px;
+  line-height: 1;
+
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+.work-company {
+  margin: 0;
+  font-size: 1.35rem;
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #14a6a3;
+}
+
+.work-role {
+  margin: 8px 0 0;
+  color: #6b7280;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.work-role span {
+  margin: 0 6px;
+  color: #9ca3af;
+}
+
+.work-role .date {
+  color: #374151;
+  font-style: italic;
+}
+
+.work-highlights {
+  margin: 16px 0 0 60px;
+  padding-left: 18px;
+}
+
+.work-highlights li {
+  margin-bottom: 8px;
+  color: #374151;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.work-highlights li:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ------------------------------------------------------------------ */
+/* Work Experience Cards - Mobile
+/* ------------------------------------------------------------------ */
+
+@media only screen and (max-width: 767px) {
+  .work-card {
+    padding: 18px;
+    margin-bottom: 22px;
+    border-radius: 12px;
+  }
+
+  .work-card-header {
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .work-icon {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    font-size: 21px;
+    border-radius: 10px;
+  }
+
+  .work-company {
+    font-size: 1.05rem;
+    line-height: 1.3;
+  }
+
+  .work-role {
+    font-size: 0.78rem;
+    margin-top: 6px;
+  }
+
+  .work-highlights {
+    margin-left: 0;
+    margin-top: 14px;
+    padding-left: 18px;
+  }
+
+  .work-highlights li {
+    font-size: 0.82rem;
+    line-height: 1.55;
+  }
+}
+
+.work-initials {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #14a6a3;
+  letter-spacing: 0.04em;
+}
+
+.work-initials-4-letters {
+  font-size: 0.66rem;
+  font-weight: 800;
+  color: #14a6a3;
+  letter-spacing: 0.03em;
+}
+
+
 
 /*----------------------------------------------*/
 /*	Skill Bars
