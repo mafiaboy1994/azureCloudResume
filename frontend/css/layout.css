@@ -522,6 +522,21 @@ ul#nav li.current a { color: #F06000; }
   }
 }
 
+/* MS Teale Azure Blue Changes  */
+
+.cert-card {
+  border-left: 5px solid #0078d4;
+}
+
+.cert-title a {
+  color: #0078d4;
+}
+
+.cert-title a:hover {
+  color: #005a9e;
+}
+
+
 
 
 
