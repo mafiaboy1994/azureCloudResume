@@ -243,3 +243,6 @@ If you want stronger controls (rate limits / WAF), consider putting the API behi
 
 ## 📄 License
 Personal project — use/adapt as you like.
+
+
+## PR TEST FOR N8N Workflow
